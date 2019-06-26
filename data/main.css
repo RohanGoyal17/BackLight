@@ -1,0 +1,201 @@
+#inputwin{
+  position:absolute;
+  display: inline-block;
+    top: 40vh;
+    
+    margin-left: -10vh;
+  
+  height: 20vh;
+  width: 20vh;
+  border-radius: 10vh;
+  background-color: white;
+  text-align: center;
+  vertical-align: middle;
+  color: black;
+  font-size: 17.5vh;
+  cursor: pointer;
+}
+
+.button1{
+  background-color: white;
+  color: #222222;
+  padding: 0.5em 0.75em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.button1:hover{
+  background-color: #000000;
+  cursor: pointer;
+  color: white;
+}
+
+.button2{
+  background-color: white;
+  color: #222222;
+  padding: 0.5em 0.75em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.button2:hover{
+  background-color: #000000;
+  cursor: pointer;
+  color: white;
+}
+
+#inputwin:hover{
+  
+  
+  border-radius: 7vh;
+  background-color: #222222;
+  
+  color: white;
+  
+}
+
+#filein{
+  display: none;
+}
+
+.svgcnt{
+	display: none;
+}
+
+#editorwindow{
+  display: none;
+}
+
+
+body{
+	background: #000000;
+	color: white;
+	font-family: "Montserrat", sans-serif;
+	text-align: center;
+
+}
+
+.contain {
+  width: 100%; 
+  vertical-align: middle;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 90%;
+  height: 5px;
+  border-radius: 5px;   
+  background: #aaaaaa;
+  outline: none;
+  display: inline-block;
+  
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; 
+  background: white;
+  cursor: pointer;
+}
+.slider::-webkit-slider-thumb:hover {
+  
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; 
+  
+}
+.slider::-webkit-slider-thumb:focus {
+  
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; 
+  
+}
+.slider::-webkit-slider-thumb:active {
+  
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; 
+  
+}
+
+.slider::-moz-range-thumb {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #aaaaaa;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1000px){
+    .slider {
+  	-webkit-appearance: none;
+  	width: 70%;
+    }
+    .name{
+     width: 20%;
+    }
+    .value{
+    width: 10%;
+    }
+
+    .button1{
+  
+  padding: 1em 1.5em;
+  
+}
+
+#logo{
+  margin-top: 5px;
+}
+}
+
+
+
+#target{
+  -webkit-touch-callout: none;
+  pointer-events: none;
+}
+
+.containo{
+  width: 10vh;
+  height: 20vh;
+}
+
+
+#logo{
+  max-height: 6vh;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+   -webkit-touch-callout: none;
+  pointer-events: none;
+
+}
+
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  color: black;
+}

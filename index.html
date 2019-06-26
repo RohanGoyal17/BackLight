@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backlight</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data/fav.png" type="image/gif" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="footer, links, icons" />
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" type="text/css" href="data/main.css">
+    
+
+    <style type="text/css">
+        @media only screen and (min-width: 1000px){
+        /* width */
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+          background: transparent; 
+        }
+         
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          background: #dddddd;
+          border-radius: 5px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: #cccccc; 
+        }} 
+    </style>
+</head>
+<body id="body" style="margin: 0px; margin-top: 10px">
+
+	<div id="inputwin" onclick="clickin()" > + 
+  <input id="filein"  type='file' onchange="readURL(this);" onclick="" accept="image/jpeg, image/png">
+   </div>
+
+   
+<div  id="editorwindow">
+  
+   
+   <a onclick="inputwin()" class="button1" style="text-decoration:none; border-radius: 3px; position: absolute; left: 10px;">back</a>
+   
+   <img src="data\fav.png" id="logo">
+   
+    <a id="download" class="button1"  style="text-decoration:none;border-radius: 3px;position: absolute; right: 10px;" download="myImage.png" href="" onclick="myCanvas(this);" >SAVE</a>
+   
+   <br>
+   <br>
+   <br>
+   <br>
+
+    <canvas id="myCanvas" 
+    style="border:1px solid #d3d3d3; margin: 0; padding: 0; display: none;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+    
+
+    
+<br>
+  <img src="#" id="target" class="target" style="max-height: 50vh; max-width: 50vh;">
+
+  <img src="#" id="targeto" style="display: none;" >
+
+  <br>
+<br>
+<br>
+<a onclick="refresh()" class="button1" style="text-decoration:none; border-radius: 3px;">refresh</a>
+<a onclick="filters()" class="button1" style="text-decoration:none; border-radius: 3px;">filters</a>
+<br>
+<br>
+<br>
+
+
+<div style="display: none">
+<div class="containo">
+
+</div>
+
+<div id="tennisballcontainer" class="containo">
+  <div class="svgcnt"> 
+  <svg class="defs-only">
+  <filter id="tennisball" color-interpolation-filters="sRGB"
+          x="0" y="0" height="100%" width="100%">
+    <feColorMatrix type="matrix"
+      values="0 0 1 0 0                                
+              0 1 0 0 1  
+              1 0 0 0 0 
+              0 0 0 1 0" />
+</filter>
+</svg>
+</div>
+
+
+
+</div>
+
+<div id="sincontainer" class="containo">
+  <div class="svgcnt"> 
+  <svg class="defs-only">
+  <filter id="sin" color-interpolation-filters="sRGB"
+          x="0" y="0" height="100%" width="100%">
+    <feColorMatrix type="matrix"
+      values="0 0 1 0 0                                
+              0 0 0 0 0  
+              0 0 0 0 0 
+              0 0 0 1 0" />
+</filter>
+</svg>
+</div>
+
+
+
+</div>
+
+
+<div id="scotchcontainer" class="containo">
+  <div class="svgcnt"> 
+  <svg class="defs-only">
+  <filter id="scotch" color-interpolation-filters="sRGB"
+          x="0" y="0" height="100%" width="100%">
+    <feColorMatrix type="matrix"
+      values="0 0 1 0 0                                
+              0 0 0 0 0  
+              0 0 0 0 0 
+              0 0 0 1 0" />
+</filter>
+</svg>
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <br>
+  <br>
+<div id="saturation" class="contain">
+  <span class="name">Saturation</span>
+  <span class="value" id="valBox1"> 100 </span><br>
+  <input class="slider" type="range" min="0" max="200" step="1" id="saturationslider" Value="100"
+     oninput="change()" onchange="change()">
+
+     <br>
+     <br>
+</div>
+
+<div id="contrast" class="contain">
+  <span class="name">Contrast</span>
+  <span class="value" id="valBox2"> 100 </span><br>
+  <input class="slider" type="range" min="0" max="300" step="1" id="contrastslider" Value="100"
+     oninput="change()" onchange="change()">
+
+     <br>
+     <br>
+</div>
+
+<div id="blur" class="contain">
+  <span class="name">Blur</span>
+  <span class="value" id="valBox3"> 0 </span><br>
+  <input class="slider" type="range" min="0" max="20" step="1" id="blurslider" Value="0"
+     oninput="change()" onchange="change()">
+
+     <br>
+     <br>
+</div>
+
+<div id="brightness" class="contain">
+  <span class="name">Brightness</span>
+  <span class="value" id="valBox4"> 100 </span><br>
+  <input class="slider" type="range" min="0" max="300" step="1" id="brightnessslider" Value="100"
+     oninput="change()" onchange="change()">
+
+     <br>
+     <br>
+</div>
+
+<div id="hue" class="contain">
+  <span class="name">Hue</span>
+  <span class="value" id="valBox5"> 0 </span><br>
+  <input class="slider" type="range" min="0" max="360" step="1" id="hueslider" Value="0"
+     oninput="change()" onchange="change()">
+
+     <br>
+     <br>
+</div>
+
+
+
+<div id="sepia" class="contain">
+  <span class="name">Sepia</span>
+  <span class="value" id="valBox7"> 0 </span><br>
+  <input class="slider" type="range" min="0" max="100" step="1" id="sepiaslider" Value="0"
+     oninput="change()" onchange="change()">
+
+     <br>
+     <br>
+</div>
+
+<div id="fade" class="contain">
+  <span class="name">Fade</span>
+  <span class="value" id="valBox8"> 0 </span>
+  <br>
+  <input class="slider" type="range" min="0" max="100" step="1" id="fadeslider" Value="0"
+     oninput="change()" onchange="change()">
+
+     <br>
+     <br><br>
+     <br><br>
+     <br>
+
+     <footer style=" background: black; text-align: left; margin: 0px; padding: 10px;">
+      <br><br>
+      <h1> BackLight</h1>
+      created by:<a style="text-decoration: none;" href="https://www.facebook.com/Rohan.Goyal.the.man"> Rohan Goyal</a>
+      <br><br>
+
+      <br><br> <br><br>
+     </footer>
+</div>
+
+</div>
+
+<div id="filters" style="display: none;">
+<a onclick="closefilter()" class="button1" style="text-decoration:none; border-radius: 3px; position: absolute; left: 10px;">back</a>
+   
+   <img src="data\fav.png" id="logo"> <br> <br> <br> <br>
+
+ 
+
+
+
+
+<button class="collapsible">Scotch</button>
+<div class="content">
+<p>Retro and intence<br>Usecase: Dark Background<br><br><br> <a class="button2" onclick="scotch()">Apply</a></p>
+</div>
+
+
+<button class="collapsible">B&W</button>
+<div class="content">
+<p>Your everyday filter<br>Usecase: Generic<br><br><br> <a class="button2" onclick="bw()">Apply</a></p>
+</div>
+
+
+<button class="collapsible">Sin</button>
+<div class="content">
+<p>Red and intence<br>Usecase: Dark Background<br><br><br><a class="button2" onclick="sin()">Apply</a> </p>
+</div>
+
+<button class="collapsible">Invert</button>
+<div class="content">
+<p>Quite self-explainatory<br>Usecase: Generic<br><br><br> <a class="button2" onclick="invert()">Apply</a></p>
+</div>
+<button class="collapsible">Tennis Ball</button>
+<div class="content">
+<p>Tacky colours of a tennisball gives a sporty funcky look<br>Usecase: Generic<br><br> <br><a class="button2" onclick="tennisball()">Apply</a></p>
+</div>
+
+</div>
+
+
+</body>
+<script src="data/main.js"></script>
+<script src="data/ajax1.js"></script>
+<script src="data/ajax2.js"></script>
+</html>
