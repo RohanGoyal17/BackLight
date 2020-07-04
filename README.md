@@ -1,6 +1,6 @@
 # BackLight
 A PWA Made to edit image telemetrics
 
-![backlight logo](/data/fav.png){width = 200px;}
+![backlight logo]{width = 200px;}(/data/fav.png)
 
 hope you enjoy the tool, it is based upon css filters.
